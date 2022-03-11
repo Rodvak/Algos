@@ -1,0 +1,34 @@
+// 1
+for (var i = 2020; i > -0; i -= 4) {
+    console.log(i)
+}
+
+//2
+var i = 2020
+while (i > -0) {
+    console.log(i);
+    i -= 4;
+}
+//3
+function flexCount(highNum, lowNum,mult) {
+    for (var i = highNum; i > -lowNum; i -= mult) {
+        console.log(i)
+    }
+}
+flexCount(2020,0,4)
+
+
+//4
+var arr = [1,5,341,2,46];
+arr.sort(organizeNum);
+console.log(arr);
+function organizeNum(a,b){
+    //< 0... a comes first
+    //0... nothing happens
+    //< 0,,, b comes first
+return a-b;  
+}
+
+
+
+
