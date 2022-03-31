@@ -20,17 +20,28 @@ function zipArraysIntoMap(keys, values) {
 // A hash table / hash map is an obj / dictionary
 // Given an object / dict,
 // return a new object / dict that has the keys and the values swapped so that the keys become the values and the values become the keys
-
-const obj1 = { name: "Zaphod", charm: "high", morals: "dicey" };
-
-function invertObj(obj) {
-    var new_object = {}
-    for (i = 0; i < obj.length; i++ ){
-        new_object = [obj[i]]
-    }
-    return new_object
+const testDict = { 
+  "name": "Zaphod", 
+  "charm": "high", 
+  "morals": "dicey" 
 }
-console.log(invertObj(obj1));
 
+function invertMap(map) {
+  const newObj = {}
+  for(const [key,val] of Object.entries(testDict)){
+    newObj[val] = key
+  }
+  return newObj
+}
+console.log(invertMap(testDict))
+
+function invertMap2(map) {
+  const newObj = {}
+  for(const key in testDict) {
+    newObj[testDict[key]] = key
+  }
+  return newObj
+}
+console.log(invertMap2(testDict))
 
 const expected2 = { Zaphod: "name", high: "charm", dicey: "morals" };
